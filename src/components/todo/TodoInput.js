@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap"
 
 const TodoInput = ({addTodo}) => {
 
@@ -18,7 +20,7 @@ const TodoInput = ({addTodo}) => {
             <h2>Todo Input</h2>
             <div>
                 <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)}/>
-                <button onClick={() => sendTodo() }>ADD</button>
+                <Button onClick={() => sendTodo() }>ADD</Button>
             </div>
             <hr/>
         </div>

@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap"
 
 const TodoItem = ({tno, title, complete, removeTodo, changeComplete}) => {
 
@@ -19,7 +21,7 @@ const TodoItem = ({tno, title, complete, removeTodo, changeComplete}) => {
     return (
         <li>
             <input type="checkbox" checked={checked} onChange={(e)=>{changeCheck(e)}} />
-            {title} <button onClick={()=>{removeTodo(tno)}}>DEL</button>
+            {title} <Button onClick={()=>{removeTodo(tno)}}>DEL</Button>
         </li>
     );
 };
