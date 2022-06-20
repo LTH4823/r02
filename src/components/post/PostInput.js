@@ -2,11 +2,11 @@ import React from 'react';
 import axios from "axios";
 import {Button} from "react-bootstrap";
 
-const PostInput = () => {
+const PostInput = ({requestRender}) => {
 
     const clickAdd = () => {
         const obj = {title:'Test......', author:'tester'}
-        postAjax(obj)
+        postAjax(obj).then(()=>{ requestRender() })
     }
 
     return (

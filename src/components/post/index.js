@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PostInput from "./PostInput";
 import PostList from "./PostList";
 
 const Post = () => {
+
+    const [flag,setFlag] =useState(false)
+
+    const requestRender = () =>{
+        setFlag(!flag)
+    }
+
     return (
         <div>
-            <PostInput/>
-            <PostList/>
+            <PostInput requestRender={requestRender}></PostInput>
+            <PostList flag = {flag}></PostList>
         </div>
     );
 };
