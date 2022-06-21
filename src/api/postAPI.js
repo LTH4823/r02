@@ -8,9 +8,10 @@ export const getPostList = async ()=>{
     return res.data
 }
 
-export const addPostAjax = async (post) =>{
+export const addPostAjax = async (post) => {
 
-    const res = await axios.post(`http://localhost/posts`,post)
+    const res = await axios.post(`http://localhost/posts/`, post)
+
     return res.data
 
 }
