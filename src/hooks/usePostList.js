@@ -1,15 +1,14 @@
-import {useEffect, useState} from "react";
+
 import {getPostList} from "../api/postAPI";
+import {useEffect, useState} from "react";
 
 const usePostList = (flag)=>{
-    const [posts, setPosts] = useState([])
+    const [posts,setPosts] = useState([])
+    useEffect(() => {
 
-    useEffect(() =>{
+        getPostList().then(res => setPosts(res))
 
-        getPostList().then(res=>setPosts(res)).catch('error')
-
-    },[flag])
-
+    }, [flag])
     return {posts}
 }
 
